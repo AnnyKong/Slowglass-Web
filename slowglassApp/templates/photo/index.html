@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+<!-- This will set the title block and then output the value of it into the header block, 
+  so that both the window and page share the same title without writing it twice. -->
+{% block header %}
+  <h1>{% block title %}Photos{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<p id=body>
+Hi, This is the webpage to show all photos!
+</p>
+
+<hr>
+  {% for photo in photos %}
+    <article class="photo">
+      <header>
+        <div>
+          <h1>Photo Title: {{ photo['title'] }}</h1>
+          <div class="about">
+          	Webpage: <a href="http://{{ photo['webpage']}}">{{ photo['webpage']}}</a>
+          </div>
+        </div>
+      </header>
+      <p class="body">
+        id: {{ photo['id'] }}
+      </p>
+      <p class="body">
+          Subjects: {{ photo['subjects']}}
+  	  </p>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+    <hr>
+  {% endfor %}
+{% endblock %}

@@ -1,10 +1,14 @@
 <!doctype html>
 <title>{% block title %}{% endblock %} - slowglassApp</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="/static/scripts.js" charset="utf-8"></script>
 <nav>
-  <h1>slowglassApp</h1>
-<!-- For users/login -->
-<!-- <ul> -->
+  <h1>Slowglass Web Navigation</h1>
+  <ul>
+    <li><a href="{{ url_for('home.home') }}">Home</a>
+    <li><a href="{{ url_for('photo.index') }}">Display Photos</a><br/>
+    <li><a href="{{ url_for('photo.create') }}">Add Photos to lib</a><br/>
+    <li><a href="{{ url_for('photo.delete') }}">Delete Photos</a><br/>
     <!-- {% if g.user %} -->
       <!-- <li><span>{{ g.user['username'] }}</span> -->
       <!-- <li><a href="{{ url_for('home.home') }}">Log Out</a> -->
@@ -12,9 +16,12 @@
       <!-- <li><a href="{{ url_for('home.home') }}">Register</a> -->
       <!-- <li><a href="{{ url_for('home.home') }}">Log In</a> -->
     <!-- {% endif %} -->
-<!-- </ul>  -->
+  </ul> 
+  <img src="/static/images/09999.jpg" alt="09999.jpg" width="40%" height="auto">
 
 </nav>
+<hr>
+
 <section class="content">
   <header>
     {% block header %}{% endblock %}
@@ -24,3 +31,11 @@
   {% endfor %}
   {% block content %}{% endblock %}
 </section>
+
+<hr>
+<nav>
+  <a href="/home">Home</a><br/>
+  <a href="/photo">Display Photos</a><br/>
+  <a href="/photo/create">Add Photos to lib</a><br/>
+  <a href="/photo/delete">Delete Photos</a><br/>
+</nav>

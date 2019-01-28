@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Photo{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<p id=body>
+Hi, This is the webpage to create a new photo!
+</p>
+
+<hr>
+  <form method="post">
+    <label for="id">Id</label><br/>
+    <input name="id" id="id" value="{{ request.form['id'] }}" required><br/>
+
+    <label for="title">Title</label><br/>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required><br/>
+
+    <label for="webpage">Webpage</label><br/>
+    <input name="webpage" id="webpage" value="{{ request.form['webpage'] }}" required><br/>
+
+    <label for="subjects">Subjects</label><br/>
+    <textarea name="subjects" id="subjects">{{ request.form['subjects'] }}</textarea><br/>
+    
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

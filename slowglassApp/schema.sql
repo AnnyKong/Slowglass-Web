@@ -1,7 +1,8 @@
 DROP TABLE IF EXISTS photo;
+DROP TABLE IF EXISTS subject;
 
 CREATE TABLE photo (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	id INTEGER PRIMARY KEY,
 	creator TEXT,
 	publisher TEXT,
 	title TEXT NOT NULL, -- NOT SURE
@@ -11,9 +12,24 @@ CREATE TABLE photo (
 	accession_num TEXT,
 	inscriptions TEXT,
 	description TEXT, 
-	place depicted TEXT,
+	place_depicted TEXT,
 	subjects TEXT,
+	subjects_id INTEGER REFERENCES subject(subjects_id),
 	webpage TEXT NOT NULL
+);
+
+CREATE TABLE subject (
+	subjects_id INTEGER PRIMARY KEY,
+	s0 TEXT,
+	s1 TEXT,
+	S2 TEXT,
+	s3 TEXT,
+	s4 TEXT,
+	S5 TEXT,
+	s6 TEXT,
+	s7 TEXT,
+	S8 TEXT,
+	s9 TEXT
 );
 
 -- DROP TABLE IF EXISTS user;

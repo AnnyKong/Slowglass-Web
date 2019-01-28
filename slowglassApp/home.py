@@ -17,6 +17,7 @@ bp = Blueprint('home', __name__)
 # When Flask receives a request to /home, 
 # it will call the home view and use the return value as the response.
 @bp.route('/home', methods=('GET', 'POST'))
+@bp.route('/', methods=('GET', 'POST'))
 def home():
 	# If the user submitted the form, request.method will be 'POST'. 
 	# In this case, start validating the input.

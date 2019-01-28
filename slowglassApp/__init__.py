@@ -34,18 +34,10 @@ def create_app(test_config=None):
 
 	from . import home
 	app.register_blueprint(home.bp)
+	app.add_url_rule('/', endpoint='index')
+	
+	from . import photo
+	app.register_blueprint(photo.bp)
 
-	# from flask import (
-	# Blueprint, flash, g, redirect, render_template, request, session, url_for
-	# )
-
-	# # When Flask receives a request to /home, 
-	# # it will call the home view and use the return value as the response.
-	# @app.route('/home', methods=('GET', 'POST'))
-	# def home():
-	# 	# If the user submitted the form, request.method will be 'POST'. 
-	# 	# In this case, start validating the input.
-
-	# 	return render_template('home/home.html')
 
 	return app

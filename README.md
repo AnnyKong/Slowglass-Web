@@ -8,12 +8,13 @@
 │   ├── db.py
 │   ├── schema.sql
 │   ├── home.py
-│   ├── auth.py
+│   ├── photo.py
 │   ├── templates/
 │   │   ├── base.html
-│   │   ├── auth/
-│   │   │   ├── home.html
-│   │   │   └── .html
+│   │   ├── home.html
+│   │   ├── photo/
+│   │   │   ├── index.html
+│   │   │   └── photo.html
 │   │   └── /
 │   │       ├── .html
 │   │       ├── .html
@@ -60,6 +61,4 @@
 	Initialized the database.
 	```
 	There will now be a `flaskr.sqlite` file in the `instance` folder in your project.
-4. 
-
 
