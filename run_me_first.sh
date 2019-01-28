@@ -1,0 +1,2 @@
+export FLASK_APP=slowglassApp
+export FLASK_ENV=development
