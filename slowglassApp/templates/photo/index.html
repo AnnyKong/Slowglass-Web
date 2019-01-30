@@ -19,6 +19,7 @@ Hi, This is the webpage to show all photos!
           <h1>Photo Title: {{ photo['title'] }}</h1>
           <div class="about">
           	Webpage: <a href="http://{{ photo['webpage']}}">{{ photo['webpage']}}</a>
+            <a href="http://{{ photo['webpage']}}">{<img src="http://{{ photo['webpage']}}" width="40%"/><a/>
           </div>
         </div>
       </header>
