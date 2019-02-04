@@ -6,6 +6,7 @@ from werkzeug.exceptions import abort
 from slowglassApp.db import get_db
 
 bp = Blueprint('photo', __name__, url_prefix='/photo')
+# app = None
 
 @bp.route('/')
 def index():

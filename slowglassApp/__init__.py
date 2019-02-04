@@ -9,7 +9,16 @@ def create_app(test_config=None):
 	app.config.from_mapping(
 		SECRET_KEY='dev',
 		DATABASE=os.path.join(app.instance_path, 'slowglassApp.sqlite'),
+		# SQLALCHEMY_DATABASE_URI = 'mysql://root:password@server/db'
+		# MYSQL_DATABASE_USER = 'root',
+		# MYSQL_DATABASE_PASSWORD = 'root123!',
+		# MYSQL_DATABASE_DB = 'slowglassApp',
+		# MYSQL_DATABASE_HOST = 'localhost',
 	)
+	# app.config['MYSQL_DATABASE_USER'] = 'root'
+	# app.config['MYSQL_DATABASE_PASSWORD'] = 'root123!'
+	# app.config['MYSQL_DATABASE_DB'] = 'slowglassApp'
+	# app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 	if test_config is None:
 		# load the instance config, if it exists, when not testing
@@ -29,15 +38,19 @@ def create_app(test_config=None):
 	def hello():
 		return 'Hello, World!'
 
-	from . import db 
+	from . import db
 	db.init_app(app)
+	# from . import db_mysql
+	# db_mysql.init_app(app)
 
 	from . import home
 	app.register_blueprint(home.bp)
 	app.add_url_rule('/', endpoint='index')
 	
 	from . import photo
+	# photo.app = app
 	app.register_blueprint(photo.bp)
+
 
 
 	return app
